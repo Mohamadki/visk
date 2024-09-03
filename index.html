@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./loveTruck.css" />
+    <link rel="stylesheet" href="./envelope.css" />
+    <title>To visk idiot</title>
+  </head>
+  <body>
+    <div class="envelope-container">
+      <div class="envelope">
+        <div class="envelope__tab"></div>
+        <div class="envelope__letter">
+          <p>Happy birthday Visk <3 <br />Iyi ki dogdun <3</p>
+        </div>
+        <div class="envelope--base"></div>
+      </div>
+    </div>
+
+    <div class="truck-container">
+      <div class="container">
+        <div class="ts">
+          <div class="box"></div>
+          <div class="front">
+            <div class="light"></div>
+            <div class="trapezoid"></div>
+            <div class="pipe"></div>
+            <div class="pipe2"></div>
+            <img class="img1" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img2" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img3" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img4" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img5" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img6" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img7" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img8" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img9" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img10" src="https://i.gifer.com/5zoP.gif" />
+            <img class="img11" src="https://i.gifer.com/5zoP.gif" />
+            <div class="front1"></div>
+            <div class="front2"></div>
+            <div class="window"></div>
+            <div class="hood"></div>
+          </div>
+          <div class="tyre1">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+          </div>
+          <div class="tyre2">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+          </div>
+          <div class="tyre3">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+          </div>
+          <div class="tyre4">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <p id="truck-text" style="display: none">
+        Visk, knowing you for all this time has been freaking awesome. You’ve
+        been my ride-or-die, and I seriously wouldn’t trade our crazy memories
+        for anything. <br /><br />
+        Thanks for being there through thick and thin and making life a whole
+        lot better. you are so sweet but not cute
+        <br /><br />
+        you are my best friend ever]
+        <br /><br />
+        seni seviyorum visk<3
+      </p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const truck = document.querySelector(".truck-container");
+        const text = document.getElementById("truck-text");
+
+        // Initially hide the text
+        text.style.display = "none";
+
+        // Function to handle visibility change
+        const handleVisibilityChange = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Show text after 7 seconds
+              setTimeout(() => {
+                text.style.display = "block";
+              }, 7000); // 7000 milliseconds = 7 seconds
+            } else {
+              // Hide text immediately when truck is not visible
+              text.style.display = "none";
+            }
+          });
+        };
+
+        // Create an IntersectionObserver
+        const observer = new IntersectionObserver(handleVisibilityChange, {
+          threshold: 0.1, // Adjust as needed
+        });
+
+        // Observe the truck element
+        observer.observe(truck);
+      });
+    </script>
+  </body>
+</html>
